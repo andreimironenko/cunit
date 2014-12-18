@@ -1158,19 +1158,31 @@ static STATUS curses_set_options_run(void)
 
     snprintf(szTemp, STRING_LENGTH,   _("   1 - Inactive suites/tests treated as runtime failures     %s"),
                                       (CU_FALSE != CU_get_fail_on_inactive()) ? _("Yes") : _("No "));
+    snprintf(szTemp, STRING_LENGTH,   _("   2 - Run test suites in parallel     %s"),
+                                      (CU_FALSE != CU_get_parallel_run()) ? _("Yes") : _("No "));
+    snprintf(szTemp, STRING_LENGTH,   _("   3 - Run test suites non-stop     %s"),
+                                      (CU_FALSE != CU_get_non_stop_run()) ? _("Yes") : _("No "));
     mvwprintw(details_pad.pPad, 2, 0, szTemp);
     refresh_details_window();
     read_input_string(_("Enter number of option to change : "), szTemp, STRING_LENGTH);
     option_num = atol(szTemp);
 
     switch (option_num) {
-      case 1:
-        CU_set_fail_on_inactive((CU_FALSE == CU_get_fail_on_inactive()) ? CU_TRUE : CU_FALSE);
-        break;
+    case 1:
+    	CU_set_fail_on_inactive((CU_FALSE == CU_get_fail_on_inactive()) ? CU_TRUE : CU_FALSE);
+    	break;
 
-      default:
-        eStatus = MOVE_UP;
-        break;
+    case 2:
+    	CU_set_parallel_run((CU_FALSE == CU_get_parallel_run()) ? CU_TRUE : CU_FALSE);
+    	break;
+
+    case 3:
+    	CU_set_non_stop_run((CU_FALSE == CU_get_non_stop_run()) ? CU_TRUE : CU_FALSE);
+    	break;
+
+    default:
+    	eStatus = MOVE_UP;
+    	break;
     }
   }
   return eStatus;

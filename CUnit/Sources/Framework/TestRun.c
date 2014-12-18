@@ -104,6 +104,12 @@ static CU_pFailureRecord f_last_failure = NULL;
 /** Flag for whether inactive suites/tests are treated as failures. */
 static CU_BOOL f_failure_on_inactive = CU_TRUE;
 
+/** Flag for parallel mode */
+static CU_BOOL f_parallel_run_on = CU_FALSE;
+
+/** Flag for non-stop mode */
+static CU_BOOL f_non_stop_run_on = CU_FALSE;
+
 /** Variable for storage of start time for test run. */
 static clock_t f_start_time;
 
@@ -541,6 +547,30 @@ CU_EXPORT void CU_set_fail_on_inactive(CU_BOOL new_inactive)
 CU_EXPORT CU_BOOL CU_get_fail_on_inactive(void)
 {
   return f_failure_on_inactive;
+}
+
+/*------------------------------------------------------------------------*/
+CU_EXPORT void CU_set_parallel_run(CU_BOOL new_state)
+{
+  f_parallel_run_on = new_state;
+}
+
+/*------------------------------------------------------------------------*/
+CU_EXPORT CU_BOOL CU_get_parallel_run(void)
+{
+  return f_parallel_run_on;
+}
+
+/*------------------------------------------------------------------------*/
+CU_EXPORT void CU_set_non_stop_run(CU_BOOL new_state)
+{
+  f_non_stop_run_on = new_state;
+}
+
+/*------------------------------------------------------------------------*/
+CU_EXPORT CU_BOOL CU_get_non_stop_run(void)
+{
+  return f_non_stop_run_on;
 }
 
 /*------------------------------------------------------------------------*/

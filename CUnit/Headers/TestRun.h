@@ -186,7 +186,12 @@ CU_EXPORT void CU_set_suite_init_failure_handler(CU_SuiteInitFailureMessageHandl
 /**< Sets the message handler to call when a suite initialization function returns an error. */
 CU_EXPORT void CU_set_suite_cleanup_failure_handler(CU_SuiteCleanupFailureMessageHandler pSuiteCleanupFailureMessage);
 /**< Sets the message handler to call when a suite cleanup function returns an error. */
-
+/*------------------------------------------------------------------------*/
+CU_EXPORT void CU_set_parallel_run(CU_BOOL new_state);
+CU_EXPORT CU_BOOL CU_get_parallel_run(void);
+CU_EXPORT void CU_set_non_stop_run(CU_BOOL new_state);
+CU_EXPORT CU_BOOL CU_get_non_stop_run(void);
+/*------------------------------------------------------------------------*/
 CU_EXPORT CU_SuiteStartMessageHandler          CU_get_suite_start_handler(void);
 /**< Retrieves the message handler called before each suite is run. */
 CU_EXPORT CU_TestStartMessageHandler           CU_get_test_start_handler(void);
