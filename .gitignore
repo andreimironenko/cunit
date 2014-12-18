@@ -1,4 +1,11 @@
 .project
+.cproject
+.settings
+arm-arago-linux-gnueabi-libtool
+config.guess
+config.h.in~
+config.sub
+mkinstalldirs
 CUnit/Headers/CUnit.h
 autom4te.cache/
 compile

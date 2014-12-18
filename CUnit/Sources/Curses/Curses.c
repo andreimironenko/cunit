@@ -1162,11 +1162,11 @@ static STATUS curses_set_options_run(void)
 
     snprintf(szTemp, STRING_LENGTH,   _("   2 - Run test suites in parallel     %s"),
                                       (CU_FALSE != CU_get_parallel_run()) ? _("Yes") : _("No "));
-    mvwprintw(details_pad.pPad, 3, 0, szTemp);
+    mvwprintw(details_pad.pPad, 4, 0, szTemp);
 
     snprintf(szTemp, STRING_LENGTH,   _("   3 - Run test suites non-stop     %s"),
                                       (CU_FALSE != CU_get_non_stop_run()) ? _("Yes") : _("No "));
-    mvwprintw(details_pad.pPad, 4, 0, szTemp);
+    mvwprintw(details_pad.pPad, 6, 0, szTemp);
 
     refresh_details_window();
     read_input_string(_("Enter number of option to change : "), szTemp, STRING_LENGTH);
