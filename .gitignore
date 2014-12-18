@@ -106,4 +106,7 @@ doc/headers/TestDB.h
 doc/headers/TestRun.h
 doc/headers/Util.h
 doc/headers/Win.h
-
+CUnit.spec
+Examples/CursesTest/.deps
+Jamrules
+stamp-h1
